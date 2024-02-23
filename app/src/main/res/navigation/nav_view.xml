@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_view"
+    app:startDestination="@+id/readfragment">
+    <fragment
+        android:id="@+id/readfragment"
+        android:name="com.toporead.readtest.ReadFragment"
+        android:label="ReadFragment"/>
+    <fragment
+        android:id="@+id/webfragment"
+        android:name="com.toporead.readtest.WebFragment"
+        android:label="WebFragment"/>
+    <fragment
+        android:id="@+id/settingfragment"
+        android:name="com.toporead.readtest.SettingFragment"
+        android:label="SettingFragment"/>
+
+
+</navigation>

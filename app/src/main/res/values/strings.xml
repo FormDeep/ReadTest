@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ReadTest</string>
+    <string name="button">BTN</string>
+    <string name="play_pause">PLAY_PAUSE</string>
+    <string name="title_read">Read</string>
+    <string name="title_web">Web</string>
+    <string name="title_setting">Setting</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

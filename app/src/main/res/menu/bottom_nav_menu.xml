@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_read"
+        android:icon="@drawable/read_icon"
+        android:title="@string/title_read" />
+    <item
+        android:id="@+id/navigation_web"
+        android:icon="@drawable/web_icon"
+        android:title="@string/title_web" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/setting_icon"
+        android:title="@string/title_setting" />
+</menu>

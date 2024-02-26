@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
+import android.widget.Button
 import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
 
 
 class WebFragment : Fragment() {
     private lateinit var webView: WebView
+    private lateinit var editText: EditText
+    private lateinit var button: Button
 
 
     override fun onCreateView(
@@ -22,42 +24,27 @@ class WebFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val context = requireContext()
-        var inputText: String =""
-        val builder = AlertDialog.Builder(context)
-        builder.setTitle("输入框标题") // 设置对话框标题
-
-// 创建一个EditText实例作为输入框
-        val input = EditText(context).apply {
-            hint = "请输入内容" // 设置输入框的提示文本
-        }
-
-// 将EditText设置为对话框内容
-        builder.setView(input)
-
-// 设置对话框的“确定”按钮及其点击事件
-        builder.setPositiveButton("确定") { dialog, which ->
-            // 当点击“确定”按钮时获取输入框中的文本
-            inputText = input.text.toString()
-        }
-
-
-        builder.setNegativeButton("取消") { dialog, which ->
-
-        }
-
-        builder.show()
-
         super.onViewCreated(view, savedInstanceState)
         webView = view.findViewById(R.id.webview)
         webView.settings.javaScriptEnabled = true
-        webView.loadUrl("https://$inputText")
+        editText =view.findViewById(R.id.webedit)
+        button =view.findViewById(R.id.webbtn)
+        button.setOnClickListener {
+            var web :String =editText.text.toString()
+            editText.setText("")
+            webView.loadUrl("https://$web")
+        }
+
+
+
+
+
 
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance() = WebFragment()
+
+    fun loadUri(webSite:String){
+        webView.loadUrl(webSite)
     }
 
 }
